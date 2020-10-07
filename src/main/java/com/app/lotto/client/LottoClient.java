@@ -38,17 +38,6 @@ public class LottoClient {
         this.restTemplate = restTemplate;
     }
 
-
-//    public ResponseEntity<?> getLastResult(String gameType){
-//        //return restTemplate.getForEntity("https://www.lotto.pl/api/lotteries/draw-results/by-gametype?game=Lotto&index=1&size=1&sort=drawDate&order=DESC", Result[].class);
-//
-//        //ResponseEntity<?> responseEntity = new ResponseEntity<Result>(HttpStatus.OK);
-//
-//        ResponseEntity<Result> responseEntity = restTemplate.getForEntity("https://www.lotto.pl/api/lotteries/draw-results/by-gametype?game=Lotto&index=1&size=1&sort=drawDate&order=DESC", ResultWrapper.class);
-//        logger.info(responseEntity.getStatusCode().toString());
-//        return responseEntity;
-//    }
-
     public Result getLastResult(String gameType) throws JsonProcessingException {
         Result result = new Result();
         int gamePosition = calculateGamePosition(gameType);
