@@ -7,7 +7,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -18,5 +19,5 @@ public class Result {
     private LocalDateTime drawDate;
     private Integer drawSystemId;
     private String gameType;
-    private Set<Integer> numbers;
+    private List numbers = new ArrayList();
 }
