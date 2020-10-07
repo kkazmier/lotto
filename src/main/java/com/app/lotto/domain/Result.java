@@ -20,4 +20,14 @@ public class Result {
     private Integer drawSystemId;
     private String gameType;
     private List numbers = new ArrayList();
+
+    @Override
+    public String toString() {
+        return "Result{" +
+                "drawDate=" + drawDate +
+                ", drawSystemId=" + drawSystemId +
+                ", gameType='" + gameType + '\'' +
+                ", numbers=" + numbers +
+                '}';
+    }
 }
