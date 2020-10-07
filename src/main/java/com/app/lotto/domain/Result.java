@@ -19,7 +19,7 @@ public class Result {
     private LocalDateTime drawDate;
     private Integer drawSystemId;
     private String gameType;
-    private List numbers = new ArrayList();
+    private List<Integer> numbers = new ArrayList<>();
 
     @Override
     public String toString() {
