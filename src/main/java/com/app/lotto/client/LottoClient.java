@@ -57,6 +57,7 @@ public class LottoClient {
                     resultNode.get("items").get(0).get("results").get(gamePosition).get("resultsJson").get(p).asInt());
         }
 
+        logger.info(result.toString());
         return result;
     }
 
