@@ -13,6 +13,7 @@ import java.time.LocalDateTime;
 @MappedSuperclass
 @Getter
 @Setter
+@Entity
 public class SelectedNumbers {
     @Id
     @Column(name = "id")
@@ -24,4 +25,7 @@ public class SelectedNumbers {
 
     @Column(name = "createdTime")
     private LocalDateTime createdTime;
+
+    @Column(name = "numbers")
+    private String numbers;
 }
