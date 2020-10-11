@@ -7,4 +7,5 @@ import java.util.List;
 public interface SelectedNumbersService {
     List<SelectedNumbers> getAll();
     SelectedNumbers save(SelectedNumbers numbers);
+    SelectedNumbers save(String gameType, String numbers);
 }
