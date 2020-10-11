@@ -10,7 +10,6 @@ import java.time.LocalDateTime;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@MappedSuperclass
 @Getter
 @Setter
 @Entity
@@ -28,4 +27,14 @@ public class SelectedNumbers {
 
     @Column(name = "numbers")
     private String numbers;
+
+    @Override
+    public String toString() {
+        return "SelectedNumbers{" +
+                "id=" + id +
+                ", gameType='" + gameType + '\'' +
+                ", createdTime=" + createdTime +
+                ", numbers='" + numbers + '\'' +
+                '}';
+    }
 }
