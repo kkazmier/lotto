@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -25,5 +26,15 @@ public class SelectedNumbersServiceImpl implements SelectedNumbersService{
     @Override
     public SelectedNumbers save(SelectedNumbers numbers) {
         return repository.save(numbers);
+    }
+
+    @Override
+    public SelectedNumbers save(String gameType, String numbers) {
+        SelectedNumbers selectedNumbers = new SelectedNumbers();
+        selectedNumbers.setGameType(gameType);
+        selectedNumbers.setNumbers(numbers);
+        selectedNumbers.setCreatedTime(LocalDateTime.now());
+        logger.info(selectedNumbers.toString());
+        return repository.save(selectedNumbers);
     }
 }
