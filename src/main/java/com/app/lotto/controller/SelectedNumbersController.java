@@ -2,12 +2,9 @@ package com.app.lotto.controller;
 
 import com.app.lotto.repository.SelectedNumbers;
 import com.app.lotto.service.SelectedNumbersService;
-import com.app.lotto.service.SelectedNumbersServiceImpl;
 import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
@@ -29,5 +26,12 @@ public class SelectedNumbersController {
     public SelectedNumbers createNumbers(@RequestBody SelectedNumbers numbers){
         logger.info("Add " + numbers);
         return service.save(numbers);
+    }
+
+    @PostMapping(value = "create/{gameType}/{numbers}")
+    public SelectedNumbers createNumbers(
+            @PathVariable("gameType") String gameType,
+            @PathVariable("numbers") String numbers){
+        return service.save(gameType, numbers);
     }
 }
