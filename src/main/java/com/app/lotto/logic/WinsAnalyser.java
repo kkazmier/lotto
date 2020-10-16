@@ -11,11 +11,12 @@ import java.util.Set;
 public class WinsAnalyser {
     Logger logger = LoggerFactory.getLogger(WinsAnalyser.class);
 
-    public List<Integer> findLottoGameWins(String result, List<String> numbers){
-        List<Integer> wins = new ArrayList<>();
-
-
-        return wins;
+    public List<Integer> findLottoGameHits(String result, List<String> numbers){
+        List<Integer> hits = new ArrayList<>();
+        numbers.stream().forEach(n -> {
+            hits.add(findHitQuantity(result, n));
+        });
+        return hits;
     }
 
     public Integer findHitQuantity(String result, String numbers){
