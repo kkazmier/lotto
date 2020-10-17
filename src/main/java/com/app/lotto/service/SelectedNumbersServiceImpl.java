@@ -24,6 +24,11 @@ public class SelectedNumbersServiceImpl implements SelectedNumbersService{
     }
 
     @Override
+    public List<SelectedNumbers> findAllFromGivenInterval(LocalDateTime start, LocalDateTime end) {
+        return repository.findAllFromGivenInterval(start, end);
+    }
+
+    @Override
     public SelectedNumbers save(SelectedNumbers numbers) {
         return repository.save(numbers);
     }
