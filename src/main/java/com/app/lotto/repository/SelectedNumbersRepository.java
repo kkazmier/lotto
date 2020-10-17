@@ -15,7 +15,7 @@ public interface SelectedNumbersRepository extends CrudRepository<SelectedNumber
     List<SelectedNumbers> findAll();
 
     @Query(nativeQuery = true,
-            value = "select * from selectedNumbers where createdTime between :start and :end")
+            value = "select * from SelectedNumbers where createdTime between :start and :end")
     List<SelectedNumbers> findAllFromGivenInterval(@Param("start") LocalDateTime start, @Param("end") LocalDateTime end);
 
     SelectedNumbers save(SelectedNumbers numbers);
